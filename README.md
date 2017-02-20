@@ -1,4 +1,4 @@
-# xsec-ssh-fireall
+# xsec-ssh-firweall
 xsec-ssh-firewall为一个简易的SSH密码防暴力破解程序，设置好配置文件后直接启动即可。
 
 ```ini
