@@ -1,7 +1,6 @@
 package util
 
 import (
-	"fmt"
 	"log"
 	"os/exec"
 
@@ -15,7 +14,7 @@ func SetIptables() {
 			log.Printf("Local ip: %v", ip)
 			continue
 		} else {
-			fmt.Println("/sbin/iptables", "-t", "filter", "-A", "WHITELIST", "-i", settings.Interface, "-s", ip, "-j", "DROP")
+			log.Printf("Block ip: %v\n", ip)
 			exec.Command("/sbin/iptables", "-t", "filter", "-A", "WHITELIST", "-i", settings.Interface, "-s", ip, "-j", "DROP").Output()
 
 		}

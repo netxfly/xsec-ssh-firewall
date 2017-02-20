@@ -25,7 +25,7 @@ var (
 )
 
 func init() {
-	log.SetPrefix("[ssh-honeypot]")
+	log.SetPrefix("[xsec-ssh-firewall] ")
 	var err error
 	source := "conf/app.ini"
 	Cfg, err = ini.Load(source)
@@ -54,6 +54,6 @@ func init() {
 		os.Create(path.Join(SshLog, "syslog"))
 	}
 	Cache = make(map[string]*cache.Cache)
-	log.Printf("SSHLogPath: %v, Interface: %v, BlockTime(Minutes): %v, WhiteIplist: %v\n", SshLog, Interface,
-		BlockTime, WhiteIPlist)
+	log.Printf("SSHLogPath: %v, Interface: %v, BlockTime: %v, WhiteIplist: %v\n", SshLog, Interface,
+		BlockTime*time.Minute, WhiteIPlist)
 }
